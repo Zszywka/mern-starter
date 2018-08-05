@@ -13,5 +13,8 @@ router.route('/posts').post(PostController.addPost);
 
 // Delete a post by cuid
 router.route('/posts/:cuid').delete(PostController.deletePost);
+//obsługa zapytania nadchodzące od klienta, który posiada obsługę wysyłania zapytań do edycji koment
+// Update a post by cuid
+router.route('/posts/:cuid').put(PostController.editPost);
 
 export default router;
