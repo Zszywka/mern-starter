@@ -25,13 +25,14 @@ import { getPost } from '../../PostReducer';
 export class PostDetailPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: this.props.post.name,
+      title: this.props.post.title,
+      content: this.props.post.content,
+    };
   }
 
-  this.state = {
-    name: this.props.post.name,
-    title: this.props.post.title,
-    content: this.props.post.content,
-  };
+
 
   //metoda obsługująca zmiany zachodzące w każdym z pól formularza.
   handleInputChange = (event) => {
