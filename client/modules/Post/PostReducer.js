@@ -1,4 +1,4 @@
-import { ADD_POST, ADD_POSTS, DELETE_POST, EDIT_POST } from './PostActions';
+import { ADD_POST, ADD_POSTS, DELETE_POST, EDIT_POST, THUMB_DOWN, THUMB_UP } from './PostActions';
 
 // Initial State
 const initialState = { data: [] };
@@ -24,7 +24,17 @@ const PostReducer = (state = initialState, action) => {
       return {
       //mapujemy po liście wszystkich postów i zmieniamy tylko tego, którego cuid pasuje do cuid w obiekcie akcji.
       //Korzystamy z Object.assign, aby stworzyć nowy obiekt łącząc ze sobą wartości z posta sprzed zmian z postem po zmianach.
-        data: state.data.map(post => { return post.cuid === action.cuid ? Object.assign({}, post, action.post) : post } ),
+        data: state.data.map(post => {return post.cuid === action.cuid ? Object.assign({}, post, action.post) : post}),
+      };
+
+    case THUMB_UP:
+      return {
+        data: state.data.map(post => {return post.cuid === action.cuid ? Object.assign({}, post, { votes: post.votes + 1 }) : post}),
+      };
+
+    case THUMB_DOWN:
+      return {
+        data: state.data.map(post => {return post.cuid === action.cuid ? Object.assign({}, post, { votes: post.votes - 1 }) : post}),
       };
 
     default:

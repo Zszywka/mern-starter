@@ -20,6 +20,11 @@ and You should clouse the terminal with MERN and open again
 
 Open webside: http://localhost:8000/
 
+Add:
+-> npm i @fortawesome/react-fontawesome
+-> npm i @fortawesome/fontawesome-svg-core
+-> npm i @fortawesome/free-brands-svg-icons
+-> npm i @fortawesome/free-solid-svg-icons
 ----------------------------------------------------------------------------------------------------------
 ![](http://res.cloudinary.com/hashnode/image/upload/w_200/v1466495663/static_imgs/mern/v2/mernio-logo.png)
 

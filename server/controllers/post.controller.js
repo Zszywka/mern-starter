@@ -35,6 +35,7 @@ export function addPost(req, res) {
   newPost.title = sanitizeHtml(newPost.title);
   newPost.name = sanitizeHtml(newPost.name);
   newPost.content = sanitizeHtml(newPost.content);
+  newPost.votes = 0;
 
   newPost.slug = slug(newPost.title.toLowerCase(), { lowercase: true });
   newPost.cuid = cuid();
@@ -87,11 +88,29 @@ export function deletePost(req, res) {
  */
  //kod sprawdza cuid z parametrów zapytania, następnie wchodzi do ciała zapytania
  // i uaktualnia odpowiednie wartości.
- export function editPost(req, res) {
-   Post.update({ cuid: req.params.cuid }, req.body.post).exec((err, post) => {
-     if (err) {
-       res.status(500).send(err);
-     }
-     res.json({ post });
-   });
- }
+export function editPost(req, res) {
+  Post.update({ cuid: req.params.cuid }, req.body.post).exec((err, post) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ post });
+  });
+}
+
+export function thumbUp(req, res) {
+  Post.findOneAndUpdate({ cuid: req.params.cuid }, { $inc: { voteCount: 1 } }, (err, post) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+    return res.status(200).end();
+  });
+}
+
+export function thumbDown(req, res) {
+  Post.findOneAndUpdate({ cuid: req.params.cuid }, { $inc: { voteCount: -1 } }, (err, post) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+    return res.status(200).end();
+  });
+}
