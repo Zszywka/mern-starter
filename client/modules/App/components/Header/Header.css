@@ -35,6 +35,13 @@
 
 .language-switcher {
   background: rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.language-switcher a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 .language-switcher ul {
