@@ -51,5 +51,22 @@ export default (
         });
       }}
     />
+    <Route
+      path="/about"
+      //https://mxstbr.blog/2016/01/react-apps-with-pages/ (getComponent expounded)
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/About/About').default);
+        });
+      }}
+     />
+    <Route
+      path="/posts"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Posts/Posts').default);
+        });
+      }}
+    />
   </Route>
 );

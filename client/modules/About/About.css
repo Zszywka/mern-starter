@@ -1,0 +1,108 @@
+/* About styles */
+
+.carousel-caption {
+  box-shadow: 0 0 10px -2px rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.carousel-caption>h5,
+.carousel-caption p {
+  /* background: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); */
+  text-shadow: 2px 2px 9px #000;
+}
+
+.cards-wrapper {
+  width: auto;
+  min-height: 50vh;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: auto;
+  max-height: calc(100vh - 143px);
+  height: calc(100vh - 143px);
+  object-fit: cover;
+}
+
+/* cards */
+
+.card {
+  box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.4);
+  transition: all ease-in-out 200ms;
+  min-height: 254px;
+}
+
+.card h6 {
+  margin-top: 10px;
+  margin-bottom: 20px !important;
+  text-transform: uppercase;
+  font-size: 1, 2em;
+}
+
+.card:hover {
+  box-shadow: 0 0 25px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card>div {
+  position: relative;
+}
+
+.card a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #6c757d;
+  color: #a1a1a1;
+  padding: 10px;
+  border-radius: 0 0 0.20rem 0.20rem;
+  transition: all ease-in-out 200ms;
+}
+
+.card:hover .github-link {
+  color: white;
+  background: #000;
+}
+
+.card:hover .linkedin-link {
+  color: white;
+  background: #0077B5;
+}
+
+.card:hover .instagram-link {
+  color: white;
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+.card svg {
+  color: #6c757d;
+  font-size: 50px;
+  transition: all ease-in-out 200ms;
+}
+
+.card:hover .github svg {
+  color: #000;
+}
+
+.card:hover .linkedin svg {
+  color: #0077B5;
+  font-size: 50px
+}
+
+.card:hover .instagram svg {
+  color: #f09433;
+}
+
+.socialIcon {
+  text-align: center;
+  margin: 0 auto;
+}
