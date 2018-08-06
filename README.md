@@ -25,6 +25,11 @@ Add:
 -> npm i @fortawesome/fontawesome-svg-core
 -> npm i @fortawesome/free-brands-svg-icons
 -> npm i @fortawesome/free-solid-svg-icons
+
+If you use generators (in develop mode), you should write in the console:
+-> ./node_modules/.bin/merng module home
+If you use generators (in global mode), you write:
+-> merng module home 
 ----------------------------------------------------------------------------------------------------------
 ![](http://res.cloudinary.com/hashnode/image/upload/w_200/v1466495663/static_imgs/mern/v2/mernio-logo.png)
 

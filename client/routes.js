@@ -18,6 +18,9 @@ if (process.env.NODE_ENV !== 'production') {
   // Require async routes only in development for react-hot-reloader to work.
   require('./modules/Post/pages/PostListPage/PostListPage');
   require('./modules/Post/pages/PostDetailPage/PostDetailPage');
+  //w wersji developerskiej naszej aplikacji musimy zaimportować moduł za pomocą require
+  //wszystko po to, aby HMR mógł zadziałać dla tego modułu.
+  require('./modules/Home/Home');
 }
 
 // react-router setup with code-splitting
@@ -36,6 +39,15 @@ export default (
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
           cb(null, require('./modules/Post/pages/PostDetailPage/PostDetailPage').default);
+        });
+      }}
+    />
+    //pozwala na generowanie routingu dla klienta po stronie serwera
+    <Route
+      path="/home"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Home/Home').default);
         });
       }}
     />
